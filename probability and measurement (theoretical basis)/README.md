@@ -12,7 +12,7 @@ Probabilidad y Medida (Base Teórica).
 
 _____________________________________________________
 
-\bProbability and Measurement (Theoretical Base).
+Probability and Measurement (Theoretical Base).
 
 1. Probability theory.
 2. Laws of Large Numbers.
