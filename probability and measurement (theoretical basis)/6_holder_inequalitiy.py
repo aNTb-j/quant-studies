@@ -8,19 +8,19 @@ T = 1           # Horizonte temporal en años
 K = 100         # Strike de la opción call
 n = 200000
 
-# Simulación bajo P
+# Simulacion bajo P
 Z_normal = np.random.normal(size=n)
 
 # Precio final del activo bajo Geometric Brownian Motion:
 ST = S0 * np.exp((mu - 0.5*sigma**2)*T + sigma*np.sqrt(T)*Z_normal)
-# Garantiza ST > 0 (distribución lognormal)
+# Garantiza ST > 0 (distribucion lognormal)
 
 # Payoff
 X = np.maximum(ST - K, 0)
 
 # Densidad de cambio de medida simplificada
 theta = (mu - r)/sigma
-# Parámetro de Girsanov
+# Parametro de Girsanov
 # Ajusta el drift de mu (medida P) a r (medida Q)
 
 Z = np.exp(-theta*Z_normal*np.sqrt(T) - 0.5*theta**2*T)
@@ -41,4 +41,5 @@ right = (np.mean(np.abs(X)**p)**(1/p)) * \
 
 print("E[|XZ|] =", left)
 print("Cota Hölder =", right)
+
 print("¿Se cumple?", left <= right)
