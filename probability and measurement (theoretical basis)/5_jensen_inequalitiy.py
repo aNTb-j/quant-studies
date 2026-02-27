@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def f(x):
-    return x**2   # Función convexa
+    return x**2   # Funcion convexa
 
 # Simulamos variable aleatoria
 n = 100000
@@ -48,4 +48,5 @@ right = np.log(np.mean(ST / S0))     # log(E[crecimiento])
 
 print("E[log crecimiento] =", left)
 print("log(E[crecimiento]) =", right)
+
 print("¿Se cumple Jensen?", left <= right)
